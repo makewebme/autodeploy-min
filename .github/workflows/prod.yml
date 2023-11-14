@@ -22,8 +22,8 @@ jobs:
             source ~/.nvm/nvm.sh
             node -v
             cd ~/autodeploy-min
-            git pull o main
+            git pull origin main
             yarn install
             yarn build
             kill -9 `lsof -t -i:80`
-            yarn start & bg
+            yarn start -p 80 & bg
